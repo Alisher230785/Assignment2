@@ -1,4 +1,6 @@
-public interface MyList<T> extends Iterable<T> {
+package Classes;
+
+public interface MyList<T> {
     void add(T item);
     void set(int index, T item);
     void add(int index, T item);
