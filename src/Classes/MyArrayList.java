@@ -1,8 +1,22 @@
 package Classes;
 
+import java.util.Iterator;
+
 public class MyArrayList<T> implements MyList {
-    private Object[] list = new Object[5];
-    private int size = 0;
+    private Object[] list;
+    private int size;
+
+    public MyArrayList() {
+        list = new Object[5];
+        size = 0;
+    }
+    public Object[] getList() {
+        return list;
+    }
+    public void setList(Object[] list) {
+        size = list.length;
+        this.list = list;
+    }
 
     @Override
     public void add(Object item) {
@@ -167,6 +181,29 @@ public class MyArrayList<T> implements MyList {
             return ( (Double) obj1 > (Integer) obj2 );
         } else {
             throw new IllegalArgumentException("Unsupported types for comparison: " + obj1.getClass() + " and " + obj2.getClass());
+        }
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        return new MyArrayListIterator();
+    }
+
+    private class MyArrayListIterator implements Iterator<T> {
+        private int currentIndex = 0;
+
+        @Override
+        public boolean hasNext() {
+            return currentIndex < size;
+        }
+
+        @Override
+        public T next() {
+            if(hasNext()) {
+                return (T) list[currentIndex++];
+            } else {
+                throw new ArrayIndexOutOfBoundsException("there is no next element of the array");
+            }
         }
     }
 }
