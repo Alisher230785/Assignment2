@@ -1,9 +1,10 @@
 import Classes.MyArrayList;
 import Classes.MyLinkedList;
+import Classes.MyStack;
 
 public class Main {
     public static void main(String[] args) {
-        checkMyLinkedList();
+        checkMyStack();
     }
 
     private static void checkMyArrayList() {
@@ -43,7 +44,7 @@ public class Main {
         myArrayList.clear();
     }
     private static void checkMyLinkedList() {
-        MyLinkedList myLinkedList = new MyLinkedList();
+        MyLinkedList<Object> myLinkedList = new MyLinkedList<>();
         myLinkedList.add(11);
         myLinkedList.add(10.5);
         myLinkedList.add(9);
@@ -78,5 +79,16 @@ public class Main {
         System.out.println();
         System.out.println(myLinkedList.exists(6) ? "6 exists" : "6 doesn't exist");
         myLinkedList.clear();
+    }
+    private static void checkMyStack() {
+        MyStack<Object> myStack = new MyStack<>();
+        System.out.println(myStack.empty());
+        myStack.push(12.5);
+        myStack.push(11);
+        System.out.println(myStack.empty());
+        System.out.println(myStack.size());
+        System.out.println(myStack.peek());
+        System.out.println(myStack.push(19.230));
+        System.out.println(myStack.pop());
     }
 }

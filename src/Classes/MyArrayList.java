@@ -1,6 +1,7 @@
 package Classes;
 
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 public class MyArrayList<T> implements MyList {
     private Object[] list;
@@ -202,7 +203,7 @@ public class MyArrayList<T> implements MyList {
             if(hasNext()) {
                 return (T) list[currentIndex++];
             } else {
-                throw new ArrayIndexOutOfBoundsException("there is no next element of the array");
+                throw new NoSuchElementException("there is no next element of the array");
             }
         }
     }
