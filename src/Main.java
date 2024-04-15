@@ -1,10 +1,11 @@
 import Classes.MyArrayList;
 import Classes.MyLinkedList;
+import Classes.MyQueue;
 import Classes.MyStack;
 
 public class Main {
     public static void main(String[] args) {
-        checkMyStack();
+        checkMyQueue();
     }
 
     private static void checkMyArrayList() {
@@ -90,5 +91,16 @@ public class Main {
         System.out.println(myStack.peek());
         System.out.println(myStack.push(19.230));
         System.out.println(myStack.pop());
+    }
+    private static void checkMyQueue() {
+        MyQueue<Object> myQueue = new MyQueue<>();
+        System.out.println(myQueue.empty());
+        myQueue.enqueue(12.5);
+        myQueue.enqueue(11);
+        System.out.println(myQueue.empty());
+        System.out.println(myQueue.size());
+        System.out.println(myQueue.peek());
+        System.out.println(myQueue.enqueue(19.230));
+        System.out.println(myQueue.dequeue());
     }
 }
