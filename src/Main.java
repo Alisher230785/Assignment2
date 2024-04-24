@@ -1,11 +1,8 @@
-import Classes.MyArrayList;
-import Classes.MyLinkedList;
-import Classes.MyQueue;
-import Classes.MyStack;
+import Classes.*;
 
 public class Main {
     public static void main(String[] args) {
-        checkMyQueue();
+        checkMyMinHeap();
     }
 
     private static void checkMyArrayList() {
@@ -102,5 +99,18 @@ public class Main {
         System.out.println(myQueue.peek());
         System.out.println(myQueue.enqueue(19.230));
         System.out.println(myQueue.dequeue());
+    }
+    private static void checkMyMinHeap() {
+        MyMinHeap<Object> myMinHeap = new MyMinHeap<>();
+        myMinHeap.insert(1);
+        myMinHeap.insert(3);
+        myMinHeap.insert(2);
+        myMinHeap.insert(-5);
+        System.out.println(myMinHeap.getMin());
+        System.out.println(myMinHeap.size());
+        System.out.println(myMinHeap.extractMin());
+        System.out.println(myMinHeap.size());
+        System.out.println(myMinHeap.extractMin());
+        System.out.println(myMinHeap.getMin());
     }
 }

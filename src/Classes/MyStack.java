@@ -10,6 +10,9 @@ public class MyStack<T> {
         return myStack.size();
     }
     public T peek() {
+        if(empty()) {
+            throw new IllegalStateException("Heap is empty");
+        }
         return (T) myStack.getLast();
     }
     public T push(T item) {
@@ -17,6 +20,9 @@ public class MyStack<T> {
         return (T) myStack.getLast();
     }
     public T pop() {
+        if(empty()) {
+            throw new IllegalStateException("Heap is empty");
+        }
         T item = (T) myStack.getLast();
         myStack.removeLast();
         return item;
